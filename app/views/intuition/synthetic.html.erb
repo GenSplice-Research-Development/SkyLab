@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home where intuition becomes reality!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Actor|Alef|Arima+Madurai|Charm|Cookie|Cormor
+  ant+Upright|Farsan|Italianno|Maitree|Marmelad|Montez|Niconne|Petit+Formal+Script|
+  Philosopher|Playball|Rochester|Rosarivo|Rouge+Script
+  |Tangerine&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight = 550 );
+    document.body.appendChild( renderer.domElement );
+
+    window.addEventListener ('resize', function( )
+    {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        renderer.setSize (width, height);
+        camera.aspect = width/height;
+        camera.updateprojectionMatrix ( );
+    });
+    // control for orbit
+    document.body.appendChild( renderer.domElement );
+    var controls = new THREE.OrbitControls( camera );
+
+
+    //controls.update() must be called after any manual changes to the camera's transform
+    camera.position.set( 0, 0, 100 );
+    controls.update();
+
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+
+        // required if controls.enableDamping or controls.autoRotate are set to true
+        controls.update();
+         renderer.render( scene, camera );
+
+    }
+    //Torus geometry
+    var geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
+    var material = new THREE.MeshBasicMaterial( { color: 0x69eee0  } );
+    var torusKnot = new THREE.Mesh( geometry, material );
+    scene.add( torusKnot );
+
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z =50;
+
+    var animate = function () {
+        requestAnimationFrame( animate );
+
+        //cube.rotation.x += 0.01;
+        torusKnot.rotation.y += 0.01;
+        torusKnot.rotation.z += 0.0;
+
+        renderer.render( scene, camera );
+    };
+    animate();
+
+
+</script>
+<div class="w3-row">
+  <div class="w3-half w3-section w3-mobile">
+    <div class="w3-card w3-padding w3-margin">
+      <h4 class="w3-text-brown"><span style="border-bottom:solid;border-bottom-color:blueviolet; "><%='Partners' %></span></h4>
+      <p class="w3-relativity"><%= 'Before Syntuition was established in 2019, it has worked
+      with many partners like Cyan Animations,
+        Hillside tech and synter individuals from different industries in
+         order to be where it is today.'%> </p>
+      <ul class="w3-text-cyan w3-mobile w3-bar">
+        <li class="w3-bar-item"><%= link_to 'Gbpax', 'http://www.gbpax.ga' %></li>
+        <li class="w3-bar-item"><%= link_to 'MischoolZambia', 'http://www.mischoolzambia.com' %></li>
+        <li class="w3-bar-item"><%= link_to 'Hillsidetech', '#' %></li>
+        <li class="w3-bar-item"><%= link_to 'Cyan Animation', '#' %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="w3-half w3-section w3-mobile">
+    <div class="w3-card w3-padding w3-margin">
+      <h4 class= "w3-text-cyan"><span style="border-bottom:solid;border-bottom-color:darkorange;" ><%='About' %></span></h4>
+      <p class="w3-relativity "><%= 'Syntuition organization was established in responce to
+       people having difficulties in learning hard/natural sciences in Zambia,
+        with this, Skylab was made in order to facilitate the illustrations '%> </p>
+      <ul class="w3-text-cyan w3-mobile w3-bar">
+        <li class="w3-bar-item"><%= link_to 'Mission', 'http://www.gbpax.ga' %></li>
+        <li class="w3-bar-item"><%= link_to 'Vision', 'http://www.mischoolzambia.com' %></li>
+        <li class="w3-bar-item"><%= link_to 'History', '#' %></li>
+        <li class="w3-bar-item"><%= link_to 'Goal', '#' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h3 class="w3-center w3-text-black w3-medium"><span class="w3-xlarge " style="border-bottom: solid;border-bottom-color:
+    red; font-family: 'Tangerine', cursive; "><%='Latest News' %><br></span><%='Syntuition development site will
+    be the final site for everything' %></h3>
+
+<div class="w3-row">
+  <div class="w3-container w3-black">
+    <h2 class="w3-center w3-text-khaki w3-card"><span class="w3-glowing w3-jumbo " style="font-family: 'Tangerine',
+        cursive;"><%= image_tag 'synlab.ico' %><br><%='Features of SkyLab' %></span></h2>
+    <div class="w3-panel w3-black">
+      <div class="w3-half">
+
+      </div>
+
+    <div class="w3-half"  >
+      <h2><span style="border-bottom:solid;border-bottom-color:darkred;"><%='Interactive Anima' %></span><%='tions' %></h2>
+      <div class="w3-card">
+        <p class="w3-relativity"><%='Inside the Laboratory or Outside the Laboratory, the user has all the controls or ability to interact with other objects' %> </p>
+      </div>
+      <ul>
+        <li><%='Play Animations' %></li>
+        <li><%='Interact With Animated Object' %></li>
+        <li><%= 'Able to do calculations inside' %></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="w3-panel w3-black">
+      <div class="w3-half"  >
+        <h2><span style="border-bottom:solid;border-bottom-color:chocolate;"><%='' %></span> <%='' %></h2>
+
+        <div class="w3-card">
+          <video autoplay muted loop id="myVideo" class="w3-mobile w3-animate-zoom">
+            <source src="KCBricks.mp4" type="video/mp4" style="width:5%;">
+            Your browser does not support HTML5 video.
+          </video>
+          <script>
+              var video = document.getElementById("myVideo");
+              var btn = document.getElementById("myBtn");
+
+              function() {
+                  if (video.paused) {
+                      video.play();
+                      btn.innerHTML = "Pause";
+                  } else {
+                      video.pause();
+                      btn.innerHTML = "Play";
+                  }
+              }
+          </script>
+        </div>
+
+      </div>
+      <div class="w3-half"  >
+        <h2><span style="border-bottom:solid;border-bottom-color:chocolate;"><%='Questions' %></span> <%='and Answers' %></h2>
+        <div class="w3-card">
+          <p class="w3-relativity"><%='Question integrated inside are one way of testing users to answer
+          queries about a particular topic or rules in science in order to know what they understand about nature. ' %></p>
+        </div>
+        <ul>
+          <li><%='Multiple questions' %></li>
+          <li><%= 'Provide answers for every wrong answer' %></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="w3-panel w3-black">
+      <div class="w3-half"  >
+        <h2><span style="border-bottom:solid;border-bottom-color:deepskyblue;"><%='VR Integ'%></span><%='ration'%></h2>
+        <div class="w3-card">
+          <p class="w3-relativity"><%='This is a future that is going to take time to be fully integrated. ' %></p>
+        </div>
+        <ul>
+          <li><%='Interact with Objects' %></li>
+          <li><%= 'Offer questions on experiments' %></li>
+          <li><%= 'Move a Character with Keyboard keys or Joysticks' %></li>
+          <li><%= 'Allows Virtual Reality integration' %></li>
+        </ul>
+      </div>
+      <div class="w3-half"  >
+
+      </div>
+
+    </div>
+    <div class="w3-panel w3-black">
+    <div class="w3-half"  >
+      <h2>Out<span style="border-bottom:solid;border-bottom-color:gold;">door Experi</span>ments</h2>
+      <div class="w3-card">
+        <p class="w3-relativity"><%='SkyLab is real-time 3D virtual laboratory that is been created to hel
+                                    p students interact with simulated equipments, tools and
+                                        devices found in the real Labs of Zambian Schools.
+      This Laboratory has both Biology and Chemistry lab and covers a wide range of experimental topics
+                                    in Zambians new Science curriculum books.'%></p>
+      </div>
+      <ul>
+        <li><%='Interact with Objects' %></li>
+        <li><%='Offer questions on experiments' %></li>
+        <li><%='Move a Character with Keyboard keys or Joysticks' %></li>
+        <li><%='Allows Virtual Reality integration' %></li>
+      </ul>
+    </div>
+  </div>
+    <div class="w3-panel">
+      <h2 class="w3-center w3-jumbo w3-animations" style="font-family: 'Tangerine', cursive;">
+        <%='Syn' %><span style="border-bottom: solid;border-bottom-color: orange;"><%='tuition Animation Stud' %></span><%= 'io' %></h2>
+
+      <div class="w3-half" >
+        <h2><%='Film Production' %><sup class="w3-text-cyan w3-medium"><%='Animations' %></sup></h2>
+        <div class="w3-card">
+          <p class="w3-relativity"><%= 'Syntuition Animation Studio (Synstudio) was created
+            in order to entertain and educated the public using 2D
+            and 3D animated films. The program was lauched when screen
+            play of \'Reviving Cassie\' was created, since then we have seen
+            screen play of \'Anole man\' coming on board and \'On the other side\'
+            they have not been released nor created using 3D and 2D software,
+            what is happening in the background are scripts.'%> </p>
+        </div>
+        <ul>
+          <li><%='3D Animations' %></li>
+          <li><%='2D Animations' %></li>
+          <li><%='VFX' %></li>
+                  </ul>
+      </div>
+      <div class="w3-half">
+        <div class="w3-card">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-row">
+  <h2 class="w3-mobile w3-margin-left w3-montez w3-xxlarge">
+    <span style="border-bottom:solid 2px;border-bottom-color:red;"><%= 'Small Projects' %></span></h2>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'appollo.png', :alt => '3D Print', :class => 'w3-image' %>
+      <div class="w3-container w3-center">
+        <p>3D Print</p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'appollo.png', :alt => 'Synstore',:class => 'w3-image' %>
+      <div class="w3-container w3-center">
+        <p><%='Synstore' %></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'CHICKEN.jpg', :alt => 'Spooky',:class => 'w3-image' %>
+      <div class="w3-container w3-center">
+        <p><%= 'Syncom' %></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'syncalcu.png', :alt => 'Spooky',:class => 'w3-image'  %>
+      <div class="w3-container w3-center">
+        <p> <%= 'Spooky'%></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'good.png',  :alt => 'Textures',:class => 'w3-image'  %>
+      <div class="w3-container w3-center">
+        <p><%='Synextures' %></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m2 w3-mobile">
+    <div class="w3-card w3-margin">
+      <%= image_tag 'GOOL.png',  :alt => 'Art',:class => 'w3-image'  %>
+      <div class="w3-container w3-center">
+        <p><%='SynArt' %></p>
+      </div>
+    </div>
+  </div>
+ </div>
+<h2 class="w3-mobile w3-center w3-xxlarge w3-margin-left w3-relativity w3-montez"><%='P'%><span style="border-bottom:solid 4px;border-bottom-color:springgreen;"><%='artne' %></span><%='rs' %></h2>
+<div class="w3-row">
+  <div class="w3-container w3-black">
+    <div class="w3-panel">
+    <div class="w3-half">
+      <div class="w3-card">
+        <h2 class="w3-relativity">Headquarters<sup class="w3-text-lime w3-medium">Home</sup></h2>
+        <p class="w3-relativity"><%= 'We are still mobile currently but we are in
+          the process of looking for a place to rent in Lusaka, the
+          Capital city of Zambia. As soon as the registration process
+          is done, our location will be seen on our website.'%> </p>
+        <ul>
+          <li>Visitation</li>
+          <li>Team</li>
+          <li>Store</li>
+          <li>Administration</li>
+        </ul>
+      </div>
+    </div>
+      <div class="w3-half">
+        <div class="w3-card">
+<%=image_tag('syn.jpg',:class => 'w3-image') %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+ </body>
+</html>

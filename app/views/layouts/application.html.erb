@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home where intuition become reality!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+  </head>
+
+
+  <body>
+  <div class="w3-sidebar w3-bar-block w3-center" style="display:none;" id="good">
+    <button onclick="w3_close()" class="w3-bar-item w3-button w3-large "><%= 'Close' %> &times;</button>
+    <p class="w3-bar-item w3-mobile" style="margin-top: 8px;"><%= link_to (image_tag 'logo4.ico'),('synthetic') %> </p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'About','abtsynt' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Project', 'project' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Event' , 'events' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'News', 'news' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Workplace', 'workplace' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Technology', 'technology' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Team', 'team' %></p>
+    <p class="w3-bar-item w3-button w3-mobile w3-border w3-round-xxlarge"><%= link_to 'Donations', 'donations' %></p>
+  </div>
+  <div class="w3-bar w3-block ">
+    <div class="w3-center w3-hover-shadow w3-hover-white">
+      <ul class="w3-transpareny w3-hover-white w3-mobile w3-bar" style="margin-bottom: -1px; margin-top: 2px;padding-bottom:20px;" >
+        <li class="w3-margin-right w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'About', 'abtsynt' %></li>
+        <li class="w3-margin-right w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'Project', 'projects' %></li>
+        <li class="w3-margin-right w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'Event', 'events' %></li>
+        <li class="w3-margin-right w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'News', 'news' %></li>
+        <li class="w3-bar-item w3-mobile" style="margin-top: 8px;"><%= link_to (image_tag 'logo4.ico'),('synthetic') %> </li>
+        <li class="w3-margin-left w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'Workplace', 'workplace' %></li>
+        <li class="w3-margin-left w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"> <%= link_to 'Technology', 'technology' %></li>
+        <li class="w3-margin-left w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"> <%= link_to 'Team', 'team' %></li>
+        <li class="w3-margin-left w3-bar-item w3-hover-blue w3-button w3-mobile w3-border w3-round-xxlarge w3-hide-small" style="margin-top: 8px;"><%= link_to 'Donations', 'donations' %></li>
+        <li class="w3-button w3-center w3-teal w3-border w3-border-pale-blue w3-round-large w3-hide-large w3-hide-medium w3-xlarge" onclick="w3_open();">☰</li>
+              </ul>
+
+    </div>
+  </div>
+    <%= yield %>
+  <div class="w3-row">
+  <div class="w3-container w3-grey">
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><%='Sy' %><span style="border-bottom: solid; border-bottom-color:gold;"><%= 'ntuiti' %></span><%='on' %></li>
+        <li><%=link_to 'About', 'abtsynt'  %></li>
+        <li><%= link_to 'Goal', 'abtsynt' %></li>
+        <li> <%=link_to 'Mission', 'abtsynt' %></li>
+        <li><%=link_to 'History', 'abtsynt' %></li>
+        <li><%=link_to 'Vision', 'abtsynt' %></li>
+      </ul>
+    </div>
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><span style="border-bottom: solid; border-bottom-color:palegreen;"><%= 'Organizati' %></span><%='on' %></li>
+        <li><%=link_to 'Store', 'workplace'  %></li>
+        <li><%= link_to 'Studio', 'workplace' %></li>
+        <li> <%=link_to 'Lab Test', 'workplace' %></li>
+        <li><%=link_to 'Workshop', 'workplace' %></li>
+        <li><%=link_to 'Administration', 'workplace' %></li>
+      </ul>
+    </div>
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><%='A' %><span style="border-bottom: solid; border-bottom-color:indigo;"><%= 'ctivit' %></span><%='ies' %></li>
+        <li><%=link_to 'Show reel', 'technology'  %></li>
+        <li><%= link_to 'Awards', 'technology' %></li>
+        <li> <%=link_to 'Showcase Day', 'technology' %></li>
+        <li><%=link_to 'School Tours', 'technology' %></li>
+        <li><%=link_to 'Syntuition Birthday', 'technology' %></li>
+      </ul>
+    </div>
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><%='As'%><span style="border-bottom: solid; border-bottom-color:darkcyan;"><%= 'sociat' %></span><%='es' %></li>
+        <li><%=link_to 'Gbpax', 'http://www.gbpax.ga'  %></li>
+        <li><%= link_to 'Cyan Animations', '#' %></li>
+        <li> <%=link_to 'Hillside Tech', '#' %></li>
+        <li><%=link_to 'MischoolZambia', 'http://mischoolzambia.com' %></li>
+        <li><%=link_to 'KMP', '#' %></li>
+      </ul>
+    </div>
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><%='Sy' %><span style="border-bottom: solid; border-bottom-color:green;"><%= 'ntra' %></span></li>
+        <li><%=link_to 'Team', 'team'  %></li>
+        <li><%= link_to 'Internship', 'team' %></li>
+        <li> <%=link_to 'Jobs', 'team' %></li>
+        <li><%=link_to 'Policy', 'abtsynt' %></li>
+        <li><%=link_to 'Location', 'abtsynt' %></li>
+      </ul>
+    </div>
+    <div class="w3-col m2">
+      <ul class="w3-text-white w3-relativity" style="list-style-type: none; font-size:13px">
+        <li class="w3-large"><%='Fo' %><span style="border-bottom: solid; border-bottom-color:palevioletred;;"><%= 'llow Syntu' %></span><%='ition' %></li>
+
+      </ul>
+    </div>
+    <div class="w3-container">
+      <p class="w3-left w3-relativity"><%='© 2019 Syntuition All Rights Reserved' %></p>
+      <p class="w3-right w3-redra w3-text-white"><%= 'Designed by' %><span class="w3-text-white"><i><%= 'Syntuitionists'%></i></span></p>
+    </div>
+  </div>
+  </div>
+    <script>
+      function w3_open() {
+          document.getElementById("good").style.width = "100%";
+          document.getElementById("good").style.display = "block";
+      }
+
+      function w3_close() {
+          document.getElementById("good").style.display = "none";
+      }
+  </script>
+  </body>
+</html>

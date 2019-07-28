@@ -1,0 +1,2 @@
+module ConfidentialHelper
+end

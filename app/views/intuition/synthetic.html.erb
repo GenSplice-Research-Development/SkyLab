@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Home where intuition becomes reality!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
   <link href="https://fonts.googleapis.com/css?family=Actor|Alef|Arima+Madurai|Charm|Cookie|Cormor
   ant+Upright|Farsan|Italianno|Maitree|Marmelad|Montez|Niconne|Petit+Formal+Script|
   Philosopher|Playball|Rochester|Rosarivo|Rouge+Script
@@ -97,8 +97,8 @@
     </div>
   </div>
 </div>
-<h3 class="w3-center w3-text-black w3-medium"><span class="w3-xlarge " style="border-bottom: solid;border-bottom-color:
-    red; font-family: 'Tangerine', cursive; "><%='Latest News' %><br></span><%='Syntuition development site will
+<h3 class="w3-center w3-text-black w3-medium"><span class="w3-xlarge" style="border-bottom: solid;border-bottom-color:
+    red; font-family: 'Tangerine', cursive; "><%='Latest News' %>  </span> <br><br><%='Syntuition development site will
     be the final site for everything' %></h3>
 
 <div class="w3-row">
@@ -107,7 +107,9 @@
         cursive;"><%= image_tag 'synlab.ico' %><br><%='Features of SkyLab' %></span></h2>
     <div class="w3-panel w3-black">
       <div class="w3-half">
-
+        <div class="w3-margin-top">
+        <%= video_tag 'box.mp4', :width =>'95%', :class => 'w3-center'%>
+        </div>
       </div>
 
     <div class="w3-half"  >
@@ -124,31 +126,7 @@
   </div>
 
     <div class="w3-panel w3-black">
-      <div class="w3-half"  >
-        <h2><span style="border-bottom:solid;border-bottom-color:chocolate;"><%='' %></span> <%='' %></h2>
 
-        <div class="w3-card">
-          <video autoplay muted loop id="myVideo" class="w3-mobile w3-animate-zoom">
-            <source src="KCBricks.mp4" type="video/mp4" style="width:5%;">
-            Your browser does not support HTML5 video.
-          </video>
-          <script>
-              var video = document.getElementById("myVideo");
-              var btn = document.getElementById("myBtn");
-
-              function() {
-                  if (video.paused) {
-                      video.play();
-                      btn.innerHTML = "Pause";
-                  } else {
-                      video.pause();
-                      btn.innerHTML = "Play";
-                  }
-              }
-          </script>
-        </div>
-
-      </div>
       <div class="w3-half"  >
         <h2><span style="border-bottom:solid;border-bottom-color:chocolate;"><%='Questions' %></span> <%='and Answers' %></h2>
         <div class="w3-card">
@@ -160,9 +138,21 @@
           <li><%= 'Provide answers for every wrong answer' %></li>
         </ul>
       </div>
+      <div class="w3-half"  >
+        <h2><span style="border-bottom:solid;border-bottom-color:chocolate;"><%='' %></span> <%='' %></h2>
 
+        <div class="w3-card">
+          <%= video_tag 'KCBricks.mp4', :width =>'95%', :class => 'w3-center'%>
+        </div>
+
+      </div>
     </div>
     <div class="w3-panel w3-black">
+           <div class="w3-half ">
+             <div class="w3-card w3-margin-top">
+        <%= video_tag 'box.mp4',:width => '95%', :class=>'w3-center' %>
+      </div>
+      </div>
       <div class="w3-half"  >
         <h2><span style="border-bottom:solid;border-bottom-color:deepskyblue;"><%='VR Integ'%></span><%='ration'%></h2>
         <div class="w3-card">
@@ -175,9 +165,7 @@
           <li><%= 'Allows Virtual Reality integration' %></li>
         </ul>
       </div>
-      <div class="w3-half"  >
 
-      </div>
 
     </div>
     <div class="w3-panel w3-black">
@@ -197,6 +185,9 @@
         <li><%='Allows Virtual Reality integration' %></li>
       </ul>
     </div>
+      <div class="w3-half w3-margin-top">
+       <%= video_tag 'box.mp4',:width => '95%', :class=>'w3-center' %>
+      </div>
   </div>
     <div class="w3-panel">
       <h2 class="w3-center w3-jumbo w3-animations" style="font-family: 'Tangerine', cursive;">
@@ -220,8 +211,8 @@
                   </ul>
       </div>
       <div class="w3-half">
-        <div class="w3-card">
-
+        <div class="w3-card w3-margin-top w3-mobile w3-margin-left">
+<%= video_tag 'KCBricks.mp4',:width => '95%', :class=>'w3-center' %>
         </div>
       </div>
     </div>
@@ -248,7 +239,7 @@
   </div>
   <div class="w3-col m2 w3-mobile">
     <div class="w3-card w3-margin">
-      <%= image_tag 'CHICKEN.jpg', :alt => 'Spooky',:class => 'w3-image' %>
+      <%= image_tag 'CHICKEN.jpg', :alt => 'Comics',:class => 'w3-image' %>
       <div class="w3-container w3-center">
         <p><%= 'Syncom' %></p>
       </div>
